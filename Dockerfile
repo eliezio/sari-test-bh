@@ -12,6 +12,7 @@ RUN set -eux; \
     adduser --disabled-password --ingroup wheel --gecos Administrator admin; \
     adduser --disabled-password --shell /bin/false --gecos "Proxy User" acme
 
+COPY issue.net /etc
 COPY sshd_config /etc/ssh/
 
 COPY --chown=admin:wheel admin_id_rsa.pub /home/admin/.ssh/authorized_keys
